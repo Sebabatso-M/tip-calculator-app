@@ -1,6 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
 import { toRem } from './Utils';
-import { DollarIcon } from './assests';
 
 export const GlobalStyle = createGlobalStyle`
 
@@ -25,7 +24,12 @@ export const GlobalStyle = createGlobalStyle`
     --font: 'Space Mono', monospace;
 
     /* font size */
-    --form-input-size: ${toRem(24)};
+    --input-size: ${toRem(20)};
+
+    /* margins */
+
+    /* medium margin bottom */
+    --m-mb: ${toRem(36)};
 }
 
 body{
@@ -34,6 +38,7 @@ body{
     font-family: var(--font);
     font-size: 16px;
     font-weight: 400;
+    padding-top: ${toRem(50)}
 }
 
 .block{
@@ -42,6 +47,7 @@ body{
     display: inline-block;
     margin: 0 10px;
 }
+
 .b1{
     background: var(--v-d-cyan);
 }
@@ -61,4 +67,8 @@ body{
     background: var(--s-cyan);
 }
 
+.selected{
+    color: var(--v-d-cyan);
+    background: var(--s-cyan);
+}
 `;

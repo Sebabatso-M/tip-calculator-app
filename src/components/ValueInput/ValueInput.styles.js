@@ -1,0 +1,43 @@
+import styled from 'styled-components';
+import { toRem } from '../../Utils';
+
+export const Wrapper = styled.div`
+    position: relative;
+    margin-bottom: var(--m-mb);
+`;
+
+export const Input = styled.input`
+    padding: ${toRem(15)} ${toRem(21.5)};
+    padding-left: ${toRem(48)};
+
+    --curve: ${toRem(8)};
+    --max-width: ${toRem(311)};
+
+    color: var(--v-d-cyan);
+    background: var(--ll-g-cyan);
+    border: none;
+    border-radius: var(--curve);
+    text-align: right;
+    font-size: var(--input-size);
+    font-weight: 700;
+
+    width: 100%;
+    max-width: var(--max-width);
+
+    &:focus {
+        outline: ${toRem(2)} solid var(--s-cyan);
+    }
+`;
+
+export const Icon = styled.div`
+    height: ${toRem(18)};
+    width: ${toRem(18)};
+
+    background: url(${(props) => props.icon && props.icon});
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    position: absolute;
+    top: ${toRem(20)};
+    left: ${toRem(20)};
+`;

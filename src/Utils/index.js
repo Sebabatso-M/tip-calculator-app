@@ -1,3 +1,3 @@
-import { toRem, toEm } from './functions';
+import { toRem, toEm, breakpoint } from './functions';
 
-export { toRem, toEm };
+export { toRem, toEm, breakpoint };
