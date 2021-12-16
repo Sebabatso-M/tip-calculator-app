@@ -31,3 +31,11 @@ export const TipButtonWrapper = styled(Button)`
         background: var(--s-cyan);
     }
 `;
+
+export const ResetButtonWrapper = styled(Button)`
+    background: var(--s-cyan);
+    color: var(--v-d-cyan);
+
+    width: 100%;
+    max-width: unset;
+`;

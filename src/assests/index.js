@@ -1,3 +1,3 @@
-import { DollarIcon, PersonIcon } from './icons';
+import { DollarIcon, DollarIcon2, PersonIcon } from './icons';
 
-export { DollarIcon, PersonIcon };
+export { DollarIcon, DollarIcon2, PersonIcon };

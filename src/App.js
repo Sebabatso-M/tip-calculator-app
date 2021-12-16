@@ -1,22 +1,30 @@
 import './css/normalize.css';
+import styled from 'styled-components';
 import { GlobalStyle } from './Globalstyles';
-import { Title, Calculator } from './components';
+import { Title, Calculator, OutputDisplay } from './components';
+import { toRem } from './Utils';
 
 function App() {
     return (
         <>
             <Title />
 
-            <div className='block b1'></div>
-            <div className='block b2'></div>
-            <div className='block b3'></div>
-            <div className='block b4'></div>
-            <div className='block b5'></div>
-            <div className='block b6'></div>
-            <Calculator />
-            <GlobalStyle />
+            <Wrapper>
+                <Calculator />
+                <OutputDisplay />
+                <GlobalStyle />
+            </Wrapper>
         </>
     );
 }
+
+const Wrapper = styled.div`
+    --curve: ${toRem(18)};
+
+    background: var(--white);
+    border-radius: var(--curve) var(--curve) 0 0;
+
+    padding-bottom: ${toRem(50)};
+`;
 
 export default App;

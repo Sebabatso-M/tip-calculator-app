@@ -1,4 +1,4 @@
-import { TipButtonWrapper } from './Buttons.styles';
+import { TipButtonWrapper, ResetButtonWrapper } from './Buttons.styles';
 
 export const TipButton = ({ children }) => {
     return (
@@ -10,4 +10,8 @@ export const TipButton = ({ children }) => {
             {children}
         </TipButtonWrapper>
     );
+};
+
+export const ResetButton = () => {
+    return <ResetButtonWrapper>Reset</ResetButtonWrapper>;
 };

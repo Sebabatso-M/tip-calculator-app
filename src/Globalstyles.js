@@ -45,33 +45,7 @@ body{
     font-family: var(--font);
     font-size: 16px;
     font-weight: 400;
-    padding-top: ${toRem(50)}
-}
-
-.block{
-    width: 50px;
-    height: 50px;
-    display: inline-block;
-    margin: 0 10px;
-}
-
-.b1{
-    background: var(--v-d-cyan);
-}
-.b2{
-    background: var(--d-g-cyan);
-}
-.b3{
-    background: var(--dd-g-cyan);
-}
-.b4{
-    background: var(--l-g-cyan);
-}
-.b5{
-    background: var(--ll-g-cyan);
-}
-.b6{
-    background: var(--s-cyan);
+    padding-top: ${toRem(50)};
 }
 
 .selected{
