@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
-import { toRem } from './Utils';
+import { toRem, breakpoint } from './Utils';
 
 export const GlobalStyle = createGlobalStyle`
 
@@ -24,7 +24,14 @@ export const GlobalStyle = createGlobalStyle`
     --font: 'Space Mono', monospace;
 
     /* font size */
-    --input-size: ${toRem(20)};
+    --input-size: ${toRem(16)};
+
+    ${breakpoint({
+        size: 'mobile_s',
+        content: `
+        --input-size: ${toRem(20)};
+    `,
+    })}
 
     /* margins */
 

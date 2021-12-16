@@ -1,4 +1,4 @@
-import { Input, Icon, Wrapper } from './ValueInput.styles';
+import { Input, Icon, Wrapper, CustomInputWrapper } from './ValueInput.styles';
 
 export const ValueInput = ({ type, url, placeholderText }) => {
     return (
@@ -9,5 +9,14 @@ export const ValueInput = ({ type, url, placeholderText }) => {
             />
             <Icon icon={url} />
         </Wrapper>
+    );
+};
+
+export const CustomInput = ({ type, placeholderText }) => {
+    return (
+        <CustomInputWrapper
+            type={type}
+            placeholder={placeholderText ? placeholderText : ''}
+        />
     );
 };

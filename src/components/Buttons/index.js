@@ -1,4 +1,4 @@
-import { TipButtonWrapper, CustomButtonWrapper } from './Buttons.styles';
+import { TipButtonWrapper } from './Buttons.styles';
 
 export const TipButton = ({ children }) => {
     return (
@@ -10,8 +10,4 @@ export const TipButton = ({ children }) => {
             {children}
         </TipButtonWrapper>
     );
-};
-
-export const CustomButton = () => {
-    return <CustomButtonWrapper>Custom</CustomButtonWrapper>;
 };

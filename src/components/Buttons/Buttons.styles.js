@@ -31,12 +31,3 @@ export const TipButtonWrapper = styled(Button)`
         background: var(--s-cyan);
     }
 `;
-
-export const CustomButtonWrapper = styled(Button)`
-    display: inline-block;
-
-    background: var(--white);
-    color: var(--d-g-cyan);
-
-    padding: 0;
-`;

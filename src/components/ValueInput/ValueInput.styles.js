@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { toRem } from '../../Utils';
+import { toRem, breakpoint } from '../../Utils';
 
 export const Wrapper = styled.div`
     position: relative;
@@ -29,6 +29,21 @@ export const Input = styled.input`
     }
 `;
 
+export const CustomInputWrapper = styled(Input)`
+    max-width: ${toRem(148)};
+    width: 48%;
+
+    padding: ${toRem(14)} ${toRem(20)};
+    margin-bottom: ${toRem(16)};
+
+    ${breakpoint({
+        size: 'mobile_m',
+        content: `
+        padding: ${toRem(14)} ${toRem(27)};
+    `,
+    })}
+`;
+
 export const Icon = styled.div`
     height: ${toRem(18)};
     width: ${toRem(18)};
@@ -38,6 +53,13 @@ export const Icon = styled.div`
     background-size: contain;
 
     position: absolute;
-    top: ${toRem(20)};
+    top: ${toRem(14)};
     left: ${toRem(20)};
+
+    ${breakpoint({
+        size: 'mobile_s',
+        content: `
+        top: ${toRem(18)};
+    `,
+    })}
 `;

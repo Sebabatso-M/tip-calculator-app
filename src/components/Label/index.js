@@ -1,5 +1,5 @@
 import { Wrapper } from './Label.styles';
 
-export const Label = ({ children }) => {
-    return <Wrapper>{children}</Wrapper>;
+export const Label = ({ mb, children }) => {
+    return <Wrapper mb={mb}>{children}</Wrapper>;
 };

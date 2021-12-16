@@ -5,5 +5,5 @@ export const Wrapper = styled.h2`
     font-size: ${toRem(19)};
     color: var(--d-g-cyan);
 
-    margin-bottom: ${toRem(12)};
+    margin-bottom: ${(props) => (props.mb ? toRem(props.mb) : toRem(12))};
 `;
