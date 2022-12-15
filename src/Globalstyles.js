@@ -33,6 +33,7 @@ export const GlobalStyle = createGlobalStyle`
         size: 'mobile_s',
         content: `
         --input-size: ${toRem(20)};
+        --spacing-size: ${toRem(68)};
     `,
     })}
 

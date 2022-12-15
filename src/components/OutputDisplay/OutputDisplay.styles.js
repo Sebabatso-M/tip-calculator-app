@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { toRem, breakpoint } from '../../Utils';
+import { toRem } from '../../Utils';
 import { DollarIcon2 } from '../../assests';
 
 export const Wrapper = styled.div`
