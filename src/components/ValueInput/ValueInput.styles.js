@@ -22,7 +22,7 @@ export const Input = styled.input`
     font-weight: 700;
 
     width: 100%;
-    max-width: var(--max-width);
+    /* max-width: var(--max-width); */
 
     &:focus {
         outline: ${toRem(2)} solid var(--s-cyan);

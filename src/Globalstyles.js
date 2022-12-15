@@ -26,6 +26,9 @@ export const GlobalStyle = createGlobalStyle`
     /* font size */
     --input-size: ${toRem(16)};
 
+    /* title spacing */
+    --spacing-size: ${toRem(50)};
+
     ${breakpoint({
         size: 'mobile_s',
         content: `
@@ -37,6 +40,13 @@ export const GlobalStyle = createGlobalStyle`
 
     /* medium margin bottom */
     --m-mb: ${toRem(36)};
+
+    ${breakpoint({
+        size: 'mobile_s',
+        content: `
+        --m-mb: ${toRem(40)}
+    `,
+    })}
 }
 
 body{
@@ -45,7 +55,7 @@ body{
     font-family: var(--font);
     font-size: 16px;
     font-weight: 400;
-    padding-top: ${toRem(50)};
+    padding-top: var(--spacing-size);
 }
 
 .selected{

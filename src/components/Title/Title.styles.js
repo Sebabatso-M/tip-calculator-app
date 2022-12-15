@@ -5,7 +5,7 @@ export const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: ${toRem(40)};
+    margin-bottom: var(--spacing-size);
 `;
 
 export const Text = styled.p`

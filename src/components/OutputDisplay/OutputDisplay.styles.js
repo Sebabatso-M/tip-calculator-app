@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { toRem } from '../../Utils';
+import { toRem, breakpoint } from '../../Utils';
 import { DollarIcon2 } from '../../assests';
 
 export const Wrapper = styled.div`
@@ -8,7 +8,11 @@ export const Wrapper = styled.div`
     background: var(--v-d-cyan);
     border-radius: var(--curve);
 
-    margin: 0 ${toRem(25)};
+    /* margin: 0 ${toRem(25)}; */
+    width: 88%;
+    max-width: ${toRem(590)};
+    margin: auto;
+
     padding: ${toRem(42)} ${toRem(24)};
     padding-bottom: ${toRem(23)};
 `;
