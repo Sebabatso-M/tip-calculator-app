@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { toRem } from '../../Utils';
+import { toRem, breakpoint } from '../../Utils';
 
 export const Wrapper = styled.div`
     display: flex;
@@ -14,4 +14,12 @@ export const Text = styled.p`
     font-size: ${toRem(24)};
     letter-spacing: ${toRem(8)};
     text-transform: uppercase;
+
+    ${breakpoint({
+        size: 'tablet',
+        content: `
+            font-size: ${toRem(30)};
+            letter-spacing: ${toRem(10)};
+        `,
+    })}
 `;

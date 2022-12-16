@@ -42,6 +42,13 @@ export const CustomInputWrapper = styled(Input)`
         padding: ${toRem(14)} ${toRem(27)};
     `,
     })}
+
+    ${breakpoint({
+        size: 'laptop_s',
+        content: `
+            width: 30%;
+        `,
+    })}
 `;
 
 export const Icon = styled.div`

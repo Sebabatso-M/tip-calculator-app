@@ -5,13 +5,21 @@ export const Wrapper = styled.div`
     padding: var(--m-mb) ${toRem(32)};
     padding-bottom: 0;
     max-width: ${toRem(631)};
-    margin: auto;
+    margin: 0 auto;
 
     ${breakpoint({
         size: `mobile_m`,
         content: `
 
-        padding: var(--m-mb) ${toRem(40)};
+        padding: var(--m-mb);
+    `,
+    })};
+
+    ${breakpoint({
+        size: `laptop_s`,
+        content: `
+        padding:0;
+        padding-right: var(--m-mb);
     `,
     })};
 `;

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { toRem } from '../../Utils';
+import { toRem, breakpoint } from '../../Utils';
 
 export const Button = styled.button`
     border: none;
@@ -15,6 +15,13 @@ export const Button = styled.button`
 
     max-width: ${toRem(148)};
     width: 48%;
+
+    ${breakpoint({
+        size: 'laptop_s',
+        content: `
+            width: 30%;
+        `,
+    })}
 `;
 
 export const TipButtonWrapper = styled(Button)`
@@ -38,4 +45,16 @@ export const ResetButtonWrapper = styled(Button)`
 
     width: 100%;
     max-width: unset;
+
+    ${breakpoint({
+        size: 'laptop_s',
+        content: `
+            position absolute;
+            left:${toRem(0)};
+            right:${toRem(0)};
+            bottom:${toRem(42)};
+            margin: 0 auto;
+            width:88%;
+        `,
+    })}
 `;

@@ -29,13 +29,23 @@ const Wrapper = styled.div`
     ${breakpoint({
         size: 'tablet',
         content: `
-        margin: auto;
-        width: 78%;
+        margin:0 auto;
+        width: 88%;
         max-width: ${toRem(677)};
 
         border-radius: var(--curve);
         margin-bottom: var(--spacing-size);
     `,
+    })}
+
+    ${breakpoint({
+        size: 'laptop_s',
+        content: `
+            display: flex;
+            max-width: ${toRem(889)};
+            padding: var(--m-mb);
+            max-height: ${toRem(548)};
+        `,
     })}
 `;
 

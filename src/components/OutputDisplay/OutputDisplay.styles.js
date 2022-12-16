@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { toRem } from '../../Utils';
+import { toRem, breakpoint } from '../../Utils';
 import { DollarIcon2 } from '../../assests';
 
 export const Wrapper = styled.div`
@@ -8,13 +8,22 @@ export const Wrapper = styled.div`
     background: var(--v-d-cyan);
     border-radius: var(--curve);
 
-    /* margin: 0 ${toRem(25)}; */
     width: 88%;
     max-width: ${toRem(590)};
-    margin: auto;
+    margin: 0 auto;
 
     padding: ${toRem(42)} ${toRem(24)};
-    padding-bottom: ${toRem(23)};
+    /* padding-bottom: ${toRem(23)}; */
+
+    position: relative;
+
+    ${breakpoint({
+        size: 'laptop_s',
+        content: `
+            width: 65%;
+            max-width: ${toRem(388)}
+        `,
+    })}
 `;
 
 export const OutputWrapper = styled.div`
@@ -22,6 +31,18 @@ export const OutputWrapper = styled.div`
     justify-content: space-between;
 
     margin-bottom: ${toRem(32)};
+    ${breakpoint({
+        size: 'mobile_l',
+        content: `
+            margin-bottom: ${toRem(38)};
+        `,
+    })}
+    ${breakpoint({
+        size: 'laptop_s',
+        content: `
+            margin-bottom: ${toRem(50)};
+        `,
+    })}
 `;
 
 export const OutputValueWrapper = styled.div`
@@ -31,6 +52,32 @@ export const OutputValueWrapper = styled.div`
     color: var(--s-cyan);
     font-size: ${toRem(32)};
     font-weight: 700;
+
+    ${breakpoint({
+        size: 'mobile_m',
+        content: `
+            font-size:${toRem(36)};
+        `,
+    })}
+    ${breakpoint({
+        size: 'mobile_l',
+        content: `
+            font-size:${toRem(40)};
+        `,
+    })}
+    ${breakpoint({
+        size: 'mobile_ls',
+        content: `
+            font-size:${toRem(44)};
+        `,
+    })}
+    ${breakpoint({
+        size: 'tablet',
+        content: `
+            font-size:${toRem(48)};
+            margin-top: ${toRem(-15)}
+        `,
+    })}
 `;
 
 export const FirstDisplayTitlesWrapper = styled.div`
