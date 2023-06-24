@@ -8,7 +8,9 @@ import {
 } from './OutputDisplay.styles';
 import { ResetButton } from '../Buttons';
 
-export const OutputDisplay = () => {
+export const OutputDisplay = ({ displayValues, setResetValues }) => {
+    const { totalPerPerson, tipAmountPerPerson } = displayValues;
+
     return (
         <>
             <Wrapper>
@@ -21,22 +23,22 @@ export const OutputDisplay = () => {
                             / person
                         </SecondDisplayTitlesWrapper>
                     </div>
-                    <Value>0.00</Value>
+                    <Value>{tipAmountPerPerson.toFixed(1)}</Value>
                 </OutputWrapper>
 
                 <OutputWrapper>
                     <div>
                         <FirstDisplayTitlesWrapper>
-                            Total
+                            totalPerPerson
                         </FirstDisplayTitlesWrapper>
                         <SecondDisplayTitlesWrapper>
                             / person
                         </SecondDisplayTitlesWrapper>
                     </div>
-                    <Value>0.00</Value>
+                    <Value>{totalPerPerson.toFixed(1)}</Value>
                 </OutputWrapper>
 
-                <ResetButton />
+                <ResetButton setResetValues={setResetValues} />
             </Wrapper>
         </>
     );

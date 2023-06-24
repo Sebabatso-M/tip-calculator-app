@@ -9,6 +9,6 @@ export const Wrapper = styled.h2`
 
     @media (min-width: ${toEm(320)}) {
         margin-bottom: ${(props) =>
-            props.mb ? toRem(parseFloat(props.mb) + 12) : toRem(24)};
+            props.mb ? toRem(parseFloat(props.mb) + 12) : toRem(20)};
     }
 `;

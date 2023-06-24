@@ -48,6 +48,12 @@ export const GlobalStyle = createGlobalStyle`
         --m-mb: ${toRem(40)}
     `,
     })}
+    ${breakpoint({
+        size: 'laptop_s',
+        content: `
+        --input-size: ${toRem(18)}
+    `,
+    })}
 }
 
 body{

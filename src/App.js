@@ -4,14 +4,30 @@ import { GlobalStyle } from './Globalstyles';
 import { Title, Calculator, OutputDisplay } from './components';
 import { toRem, breakpoint } from './Utils';
 
+import { useEffect, useState } from 'react';
+
 function App() {
+    const [totalPerPerson, setTotalPerPerson] = useState(0);
+    const [tipAmountPerPerson, setTipAmountPerPerson] = useState(0);
+    const [resetValues, setResetValues] = useState(true);
+
     return (
         <>
             <Title />
 
             <Wrapper>
-                <Calculator />
-                <OutputDisplay />
+                <Calculator
+                    setFunctions={{
+                        setTotalPerPerson,
+                        setTipAmountPerPerson,
+                        setResetValues,
+                    }}
+                    resetValues={resetValues}
+                />
+                <OutputDisplay
+                    displayValues={{ totalPerPerson, tipAmountPerPerson }}
+                    setResetValues={setResetValues}
+                />
                 <GlobalStyle />
             </Wrapper>
         </>
@@ -42,7 +58,7 @@ const Wrapper = styled.div`
         size: 'laptop_s',
         content: `
             display: flex;
-            max-width: ${toRem(889)};
+            max-width: ${toRem(900)};
             padding: var(--m-mb);
             max-height: ${toRem(548)};
         `,

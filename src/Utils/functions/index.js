@@ -12,3 +12,7 @@ export const breakpoint = ({ size, content }) => {
         ${content}
     }`;
 };
+
+export function toDecimal(percent) {
+    return parseFloat(percent) / 100;
+}

@@ -24,6 +24,18 @@ export const Input = styled.input`
     width: 100%;
     /* max-width: var(--max-width); */
 
+    /* Chrome, Safari, Edge, Opera */
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    /* Firefox */
+    &[type='number'] {
+        -moz-appearance: textfield;
+    }
+
     &:focus {
         outline: ${toRem(2)} solid var(--s-cyan);
     }
@@ -47,6 +59,7 @@ export const CustomInputWrapper = styled(Input)`
         size: 'laptop_s',
         content: `
             width: 30%;
+            font-size: ${toRem(18)}
         `,
     })}
 `;
