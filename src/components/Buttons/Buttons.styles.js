@@ -25,9 +25,15 @@ export const Button = styled.button`
 `;
 
 export const TipButtonWrapper = styled(Button)`
-    background: var(--v-d-cyan);
+    background: ${(props) =>
+        props.active && !props.removeActive
+            ? 'var(--s-cyan)'
+            : 'var(--v-d-cyan)'};
     display: inline-block;
-    color: var(--white);
+    color: ${(props) =>
+        props.active && !props.removeActive
+            ? 'var(--v-d-cyan)'
+            : ' var(--white)'};
 
     margin-bottom: ${toRem(16)};
 

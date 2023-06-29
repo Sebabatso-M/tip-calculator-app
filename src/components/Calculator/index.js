@@ -4,15 +4,16 @@ import { ValueInput, CustomPercInput } from '../ValueInput';
 import { TipButton } from '../Buttons';
 import { DollarIcon, PersonIcon } from '../../assests';
 import { tipsPercentages } from '../../content/content';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
+import { CalculatorContext } from '../../App';
 
-export const Calculator = ({ setFunctions, resetValues }) => {
+export const Calculator = () => {
     const [tipRate, setTipRate] = useState(0);
     const [bill, setBill] = useState(0);
     const [numberOfPeople, setNumberOfPeople] = useState(0);
 
-    const { setTotalPerPerson, setTipAmountPerPerson, setResetValues } =
-        setFunctions;
+    const { setTotalPerPerson, setTipAmountPerPerson, resetValues } =
+        useContext(CalculatorContext);
 
     function resetAllValues() {
         setTipAmountPerPerson(0);
@@ -39,23 +40,15 @@ export const Calculator = ({ setFunctions, resetValues }) => {
             <Label>Bill</Label>
             <ValueInput
                 setFunction={setBill}
-                setResetValues={setResetValues}
-                resetValues={resetValues}
                 type='text'
                 url={DollarIcon}
                 placeholderText='0'
             />
             <Label mb={'21'}>Select Tip %</Label>
-            <TipButtons
-                setTipRate={setTipRate}
-                setResetValues={setResetValues}
-                resetValues={resetValues}
-            />
+            <TipButtons setTipRate={setTipRate} />
             <Label>Number of People</Label>
             <ValueInput
                 setFunction={setNumberOfPeople}
-                setResetValues={setResetValues}
-                resetValues={resetValues}
                 type='text'
                 url={PersonIcon}
                 placeholderText='0'
@@ -64,17 +57,21 @@ export const Calculator = ({ setFunctions, resetValues }) => {
     );
 };
 
-const TipButtons = ({ setTipRate, setResetValues, resetValues }) => {
+const TipButtons = ({ setTipRate }) => {
     const [switchInput, setSwitchInput] = useState(false);
+    const [activeIndex, setActiveIndex] = useState(null);
     return (
         <>
             <ButtonsWrapper>
-                {tipsPercentages.map((tip) => {
+                {tipsPercentages.map((tip, index) => {
                     return (
                         <TipButton
                             key={tip.id}
                             handleSwitchInput={{ switchInput, setSwitchInput }}
                             setTipRate={setTipRate}
+                            isActive={activeIndex === index}
+                            setHighlight={() => setActiveIndex(index)}
+                            resetHighlight={() => setActiveIndex(-1)}
                         >
                             {tip.perc}
                         </TipButton>
@@ -84,8 +81,7 @@ const TipButtons = ({ setTipRate, setResetValues, resetValues }) => {
                 <CustomPercInput
                     handleSwitchInput={{ switchInput, setSwitchInput }}
                     setFunction={setTipRate}
-                    setResetValues={setResetValues}
-                    resetValues={resetValues}
+                    resetHighlight={() => setActiveIndex(-1)}
                 />
             </ButtonsWrapper>
         </>

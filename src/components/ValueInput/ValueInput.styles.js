@@ -44,6 +44,10 @@ export const Input = styled.input`
 export const CustomInputWrapper = styled(Input)`
     max-width: ${toRem(148)};
     width: 48%;
+    outline: ${(props) =>
+        props.active && !props.removeOutline
+            ? `${toRem(2)} solid var(--s-cyan)`
+            : 'none'};
 
     padding: ${toRem(14)} ${toRem(20)};
     margin-bottom: ${toRem(16)};

@@ -4,33 +4,35 @@ import { GlobalStyle } from './Globalstyles';
 import { Title, Calculator, OutputDisplay } from './components';
 import { toRem, breakpoint } from './Utils';
 
-import { useEffect, useState } from 'react';
+import { createContext, useState } from 'react';
+
+export const CalculatorContext = createContext(null);
 
 function App() {
     const [totalPerPerson, setTotalPerPerson] = useState(0);
     const [tipAmountPerPerson, setTipAmountPerPerson] = useState(0);
-    const [resetValues, setResetValues] = useState(true);
+    const [resetValues, setResetValues] = useState(false);
 
     return (
-        <>
+        <CalculatorContext.Provider
+            value={{
+                setTotalPerPerson,
+                setTipAmountPerPerson,
+                setResetValues,
+                resetValues,
+            }}
+        >
             <Title />
 
             <Wrapper>
-                <Calculator
-                    setFunctions={{
-                        setTotalPerPerson,
-                        setTipAmountPerPerson,
-                        setResetValues,
-                    }}
-                    resetValues={resetValues}
-                />
+                <Calculator />
                 <OutputDisplay
                     displayValues={{ totalPerPerson, tipAmountPerPerson }}
                     setResetValues={setResetValues}
                 />
                 <GlobalStyle />
             </Wrapper>
-        </>
+        </CalculatorContext.Provider>
     );
 }
 
